@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { type FC } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
 type RootLayoutProps = {
   children: React.ReactNode;
 };
@@ -11,8 +12,10 @@ export const metadata = {
 
 const RootLayout: FC<RootLayoutProps> = (props) => {
   return (
-    <html lang="ja">
-      <body className="">{props.children}</body>
+    <html lang="ja" suppressHydrationWarning>
+      <body className="">
+        <ThemeProvider>{props.children} </ThemeProvider>
+      </body>
     </html>
   );
 };
