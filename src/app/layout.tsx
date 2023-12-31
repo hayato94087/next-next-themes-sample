@@ -14,7 +14,15 @@ const RootLayout: FC<RootLayoutProps> = (props) => {
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className="">
-        <ThemeProvider>{props.children} </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          storageKey="acme-theme"
+        >
+          {props.children}{" "}
+        </ThemeProvider>
       </body>
     </html>
   );
